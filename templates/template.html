@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script defer src="{{ url_for('static', filename='app.js') }}"></script>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <link href='https://fonts.googleapis.com/css?family=Space Mono' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/032c2dd8c9.js" crossorigin="anonymous"></script>
 </head>
         
@@ -13,7 +14,6 @@
 <!--               BARRE DE NAVIGATION                                      -->
 <nav class="navbar" id="nav">
   <div class="navbar__container" >
-    <a href="#" id="navbar__logo"><img class="imglogo" src="../static/vapor.png" height="40px">VAPOR</a>
     <div class="navbar__toggle" id="mobile-menu"> 
       <span class="bar"></span> <span class="bar"></span>
       <span class="bar"></span>
@@ -28,16 +28,8 @@
       <li class="navbar__item">
         <a href="/about" class="navbar__links" id="pilot-page">About</a>
       </li>
-      <li>
-        <form action="/chercher">
-          <label for="prix" class="fa-solid fa-magnifying-glass" style="color:#fff;"></label>
-          <input class='searchbar' type="text" placeholder="" name="keyword" id="keyword">
-          <label for="keyword" class="fa-solid fa-dollar-sign" style="color:#fff;"></label>
-          <input class='searchbar' type="number" placeholder="" name="prix" id="prix">
-          <input type="submit" value="Soumettre">
-      </form>
-      </li>
     </ul>
+    <a href="#" id="navbar__head">Words Words Words</a>
   </div>
 </nav>
 
