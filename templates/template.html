@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+  <script src="https://kit.fontawesome.com/032c2dd8c9.js" crossorigin="anonymous"></script>
+</head>
+        
+<body> 
+
+<!--               BARRE DE NAVIGATION                                      -->
+<nav class="navbar" id="nav">
+  <div class="navbar__container" >
+    <a href="#" id="navbar__logo"><img class="imglogo" src="../static/vapor.png" height="40px">VAPOR</a>
+    <div class="navbar__toggle" id="mobile-menu"> 
+      <span class="bar"></span> <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a href="/" class="navbar__links" id="home-page">Store</a>
+      </li>
+      <li class="navbar__item">
+        <a href="/library" class="navbar__links" id="about-page">Library</a>
+      </li>
+      <li class="navbar__item">
+        <a href="/about" class="navbar__links" id="pilot-page">About</a>
+      </li>
+      <li>
+        <form action="/chercher">
+          <label for="prix" class="fa-solid fa-magnifying-glass" style="color:#fff;"></label>
+          <input class='searchbar' type="text" placeholder="" name="keyword" id="keyword">
+          <label for="keyword" class="fa-solid fa-dollar-sign" style="color:#fff;"></label>
+          <input class='searchbar' type="number" placeholder="" name="prix" id="prix">
+          <input type="submit" value="Soumettre">
+      </form>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% block content %}
+<!--               SECTION ET CONTAINER                                     -->
+  <section>
+    <div class="container content">
+    {% block container %}
+    {% endblock %}
+    </div>
+  </section>
+{% endblock %}
+
+<!-- <div class="tp" id="tp">
+  <h1>Games</h1>
+  <div class="ihm__wrapper">
+    <div class="ihm__card">
+      <h2>Title</h2>
+      <p>Description...</p>
+      <div class="ihm__btn"><button><a href="../IHMWeb/1/IHMWeb1.html">More About</a></button></div>
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+<div class="footer__container">
+  <section class="social__media">
+    <div class="social__media--wrap">
+      <p class="website__rights">© All Rights Reserved, 2023</p>
+    </div>
+  </section>
+</div>
+</body>
+</html>

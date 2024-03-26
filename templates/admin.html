@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block title %} Admin {% endblock %}
+
+{% block container %}
+
+<table class="table">
+    <thead class="thead">
+        <tr>
+            {% for colonne in colonnes %}
+            <td><b>{{ colonne[1] }} : {{ colonne[2] }}</b></td>
+            {% endfor %}
+        </tr>
+        </thead>
+    <tbody class="tbody">
+    {% for jeu in jeux %}
+        <tr>
+        {% for colonne in jeu %}
+            <td>{{ colonne }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
