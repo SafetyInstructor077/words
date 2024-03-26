@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+
+:root{ /*Root element = <html>*/
+    --white: #fff; /*Variable definie dans root donc la variable --white prend la valeur d'une couleur ici du blanc*/
+    --dark: #131313; 
+    --gray: #131313fb; 
+    --back: rgba(27, 31, 34, 0.85); 
+}
+
+::selection{ /*applique des styles à la partie d'un document qui a été mise en surbrillance par l'utilisateur.*/
+    color: var(--white); /*Change la couleur du texte*/
+    background-color: darkblue; /*Changela couleur du background*/
+}
+
+body {
+    background-image: url("https://w0.peakpx.com/wallpaper/776/726/HD-wallpaper-minimal-winter-amoled-battery-saver-black-dark-iceberg-mountain-mountains-trees.jpg");
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	font-family: "Source Sans Pro", sans-serif;
+}
+
+#container { /*Selection la balise qui contient l'ID "container"*/
+    margin: auto;
+    margin-top: 8rem;
+    padding: 4.5rem 2.5rem 1.5rem 2.5rem ; /*Ajoute de l'espace a l'interieure de la boite entre le texte et son background*/
+    color: var(--white); /*Change la couleur du font a la variable "--white" definie dans le root*/
+    background-color: var(--back); /*Change la couleur du background (boite/container) a la variable "--back"*/
+    border-radius: 10px; /*Arrondies les contours de la boite*/
+    position: absolute; /*Retire l'element du flux normal et position l'element selon les valeurs de "top" et "left"*/
+    top: 50%; /*Descend l'element au milieu verticale de la page*/
+    left: 50%; /*Position l'element au milieur horizontal de la page*/
+    transform: translate(-50%, -50%); /*Sans "transform", les proprietes "top" et "left" ne feront rien*/
+}
+
+.intro > * { /**/
+    font-weight: 600; /*Definie la largeur (thickness) du texte*/
+    line-height: 1.5; /*Multiplie la taille du font par 1.5*/
+    margin: 0 0 1rem 0; /*Ajoute un espace au entre les elements*/
+    text-transform: uppercase; /*Transforme le text en majuscule*/
+    letter-spacing: 0.2rem; /*Definie la largeur des espaces entre chaque lettre*/
+}
+
+h2{ /**/
+    border-bottom: solid 1px var(--white); /*Ajoute la ligne blanche sous le titre en H2*/
+    width: -moz-max-content; 
+    width: -webkit-max-content;
+    width: -ms-max-content;
+    width: max-content; /*Le contenu ne sera pas renvoyé à la ligne même s'il provoque des débordements.*/
+    padding-bottom: 0.5rem; /*Ajoute un espace entre*/
+}
+
+.para > p { /*Selection les descendants directes en balises <p> de la classe "para" */
+    margin: 20px; /**/
+    font-size: 1.25rem; /*Ajuste la taille du font*/
+    text-align: center; /*Aligne le textes au centre vertical de la page*/
+}
+
+.para a { /**/
+    text-decoration: none; /*Enleve tous proprietes qui "decor" le texte comme la ligne (text-decoration-line)*/
+    color: aqua; /*Change la couleur des liens*/
+
+}
+
+form{
+    padding-left: 30%;
+}

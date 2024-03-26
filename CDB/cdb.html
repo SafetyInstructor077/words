@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cahier de Bord</title>
+    <link rel="stylesheet" href="cdb.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar" id="nav">
+      <div class="navbar__container" >
+        <a href="../index.html" id="navbar__logo">Sheeshers</a>
+        <div class="navbar__toggle" id="mobile-menu"> 
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="../index.html" class="navbar__links" id="home-page">Home</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__links" id="about-page">Orientation</a>
+          </li>
+          <li class="navbar__item">
+            <a href="../Piloting/pilot.html" class="navbar__links" id="pilot-page">Aviation</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__icons"><i class="fab fa-youtube"></i></a>
+          </li>
+          <li class="navbar__item">
+            <a href="https://github.com/SafetyInstructor077?tab=repositories" class="navbar__icons"><i class="fab fa-github"></i></a>
+          </li>
+          <li class="navbar__item">
+            <a href="#" class="navbar__icons"><i class="fab fa-discord"></i></a>
+          </li>
+          <li class="navbar__btn">
+            <a href="../leo/CDB/cdb.html" class="button" id="signup">CDB</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Cours Section -->
+    <div class="tp" id="tp">
+        <h1>Cahier de Bord</h1>
+        <!-- <div class="card">
+          <div class="card__inner">
+            <div class="card__face card__face--front">
+              <h2>IHMWeb 1</h2>
+            </div>
+            <div class="card__face card__face--back">
+              <div class="card__content">
+                <div class="card__header">
+                  <h2>Fonctionnement d'un site web de bout en bout</h2>
+                </div>
+                <div class="card__body">
+                  <h3>Séance 1 - 09/11/2022</h3>
+                  <p>
+                    <div class="ihm__btn"><button><a href="../IHMWeb/1/IHMWeb1.html">Appuyez</a></button></div>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="ihm__wrapper">
+          <div class="ihm__card">
+            <h2>IHMWeb1</h2>
+            <p>URL</p>
+            <div class="ihm__btn"><button><a href="../IHMWeb/1/IHMWeb1.html">Appuyez</a></button></div>
+          </div>
+          <div class="ihm__card">
+            <h2>IHMWeb2</h2>
+            <p>HTML</p>
+            <div class="ihm__btn"><button><a href="../IHMWeb/2/IHMWeb2.html">Appuyez</a></button></div>
+          </div>
+          <div class="ihm__card">
+            <h2>IHMWeb3</h2>
+            <p>CSS</p>
+            <div class="ihm__btn"><button><a href="../IHMWeb/3/IHMWeb3.html">Appuyez</a></button></div>
+          </div>
+          <div class="ihm__card">
+            <h2>IHMWeb4</h2>
+            <p>JS</p>
+            <div class="ihm__btn"><button><a href="../IHMWeb/4/IHMWeb4.html">Appuyez</a></button></div>
+          </div>
+          <div class="ihm__card">
+            <h2>IHMWeb5</h2>
+            <p>Formulaires</p>
+            <div class="ihm__btn"><button><a href="../IHMWeb/5/IHMWeb5.html">Appuyez</a></button></div>
+          </div>
+          <div class="ihm__card">
+            <h2>IHMWeb6</h2>
+            <p>Get and Post</p>
+            <div class="ihm__btn"><button><a href="../IHMWeb/6/IHMWeb6.html">Appuyez</a></button></div>
+          </div>
+          <div class="ihm__card">
+            <h2>IHMWeb7</h2>
+            <p>...</p>
+            <div class="ihm__btn"><button><a href="../IHMWeb/7/IHMWeb7.html">Appuyez</a></button></div>
+          </div>
+          <div class="ihm__card">
+            <h2>IHMWeb8</h2>
+            <p>...</p>
+            <div class="ihm__btn"><button><a href="../8/IHMWeb/IHMWeb8.html">Appuyez</a></button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <div class="footer__container">
+      <section class="social__media">
+        <div class="social__media--wrap">
+          <div class="footer__logo">
+            <a href="/" id="footer__logo">Sheeshers</a>
+          </div>
+          <p class="website__rights">© All Rights Reserved, 2022</p>
+          <div class="social__icons">
+            <a href="/" class="social__icon--link" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a href="https://github.com/SafetyInstructor077?tab=repositories" class="social__icon--link"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="/" class="social__icon--link"
+              ><i class="fab fa-discord"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- <script>
+      const card = document.querySelector(".card__inner");
+      card.addEventListener("click", function (e) {
+        card.classList.toggle('is-flipped');
+      });
+    </script> -->
+    <script src="../2ndapp.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IHMWeb5</title>
+        <link rel="stylesheet" href="5.css">
+    </head>
+    <body>
+        <div id="container">
+            <div class="intro">
+                <h2>IHM Web 5: Les Formulaires</h2>
+                <h3>Séance 5 - 07/12/2022</h3>
+            </div>
+            <div class="para">
+              <p>
+                Aujourd'hui, le 7 décembre 2022, nous avons vu les formulaires. Un formulaire est indiqué en HTML par la balise "form" et permet à l'utilisateur de la page de saisir des données grâce aux balises "input", "option" ou encore "checkbox" puis d'envoyer par un bouton ces informations au serveur.
+                Chaque balise spécifique est suivi d'attribut comme "type", "name", et "value". Ces attributs permettent de retrouver ou d'extraire les informations pour l'utilisation avec JavaScript par exemple. 
+                <br><br>
+                Voici l'exercice 3 du TP d'aujourd'hui comme exemple de formulaires :
+                <form>
+                  <h2>Formulaire de paiement :</h2>
+                  <p>Les champs obligatoires sont suivis par .*.</p>
+                  <h3>Informations de contact</h3>
+                  <p>Qualité :
+                      Monsieur <input type="radio" name="genre" value="m"/>
+                      Madame <input type="radio" name="genre" value="f"/>
+                  </p>
+                  <p>Nom : .*.<input type="text" name="nom"></p>
+                  <p>e-mail : .*.<input type="text" name="mail"></p>
+                  <p>Mot de passe : .*.<input type="password" name="pass" placeholder="Password"></p>
+                  
+                  <h3>Informations de paiement</h3>
+                  <p>Type de carte : 
+                      <select name="menu[]" size="1">
+                          <option value="visa">Visa</option>
+                          <option value="bleue" selected>Bleue</option>
+                      </select>
+                  </p>
+                  <p>Numéro : .*.<input type="text" name="num"></p>
+                  <p>Validité : .*.<input type="text" name="val"></p>
+                  <p><i>format mm/aa</i></p>
+                  <button type="button">Valider le paiement</button>
+                </form>
+              </p>
+            </div>
+        </div>
+    </body>
+</html>
