@@ -64,21 +64,24 @@ display: flex;
 flex-direction: row;
 align-items: center;
 list-style: none;
+left: 0%;
+padding: 0 85px;
 }
 
 .navbar__item {
-height: 80px;
+  border: 1px solid;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+
 }
 
 .navbar__links {
 color: var(--black);
-display: flex;
-align-items: center;
-justify-content: center;
 width: 110px;
 text-decoration: none;
-height: 100%;
 transition: all 0.3s ease;
+font-size: 1rem;
 }
 
 .navbar__icons{
@@ -195,16 +198,10 @@ cursor: pointer;
   background: var(--black);
 }
 
-.navbar__item {
-  width: 100%;
-}
-
 .navbar__links {
   color: var(--black);
-  text-align: center;
   padding: 2rem;
   width: 100%;
-  display: table;
 }
 
 .navbar__icons{
@@ -275,7 +272,6 @@ cursor: pointer;
 /* cours Section */
 
 .tp {
-    background: var(--primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -283,6 +279,7 @@ cursor: pointer;
     height: fit-content;
     min-height: 100vh;
     padding: 5.5rem 0;
+    color: var(--black);
   }
   
   /* .tp h1 {
@@ -309,12 +306,8 @@ cursor: pointer;
     width: 120vh;
     border-radius: 4px;
     display: flex;
-    background-color: #212e408b;
     flex-direction: column;
     justify-content: center;
-    color: #fff;
-    border: solid 2px #fff;
-    transition: 0.3s ease-in;
   }
   
   /* .ihm__card:first-child {
@@ -340,7 +333,7 @@ cursor: pointer;
     text-decoration: none;
   } 
 
-  .ihm__card button {
+  /* .ihm__card button {
     color: #fff;
     padding: 14px 24px;
     border: none;
@@ -352,11 +345,11 @@ cursor: pointer;
   
   .ihm__card button:hover {
     cursor: pointer;
-  }
+  } */
 
   .tp a{
     text-decoration: none;
-    color: #fff;
+    color: var(--black);
   }
   
   .ihm__card:hover {
@@ -383,14 +376,14 @@ cursor: pointer;
     /* align-content: start; */
   }
 
-  .ihm_text h2{
+  /* .ihm_text h2{
     text-align: left;
-  }
+  } */
 
   .ihm_text p{
-    text-align: left;
+    font-family: monospace;
+    text-align: center;
     margin: 15px 0;
-    color: #757575;
   }
 
   .ihm_rest{
@@ -425,7 +418,7 @@ cursor: pointer;
 
 /* Footer CSS */
 .footer__container {
-  background: var(--secondary);
+  background: var(--black);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -434,7 +427,7 @@ cursor: pointer;
 }
 
 .website__rights {
-  color: #fff;
+  color: var(--white);
   font-size: 15px;
   
   
@@ -476,7 +469,7 @@ td {
 .table {
   margin-top: 80px;
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--black);
   border-collapse: collapse;
   /* is-narrow is-hoverable is-bordered */
 }
@@ -485,7 +478,7 @@ td {
   margin: 40px;
   margin-top: 110px;
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--black);
 }
 
 .iform > fieldset > input {
@@ -503,7 +496,7 @@ td {
   max-height: 7rem;
   width: 570px;
 
-  color: #757575;
+  color: var(--black);
   font-size: 10px;
   word-wrap: break-word;
   overflow: auto;
@@ -514,7 +507,7 @@ td {
 
 #ihm_description *{
   all: initial;
-  color: #757575;
+  color: var(--black);
   font-size: 10px;
   word-wrap: break-word;
   overflow: auto;
@@ -526,7 +519,7 @@ td {
   /* max-height: 7rem; */
   /* width: 570px; */
 
-  color: #757575;
+  color: var(--black);
   font-size: 20px;
   word-wrap: break-word;
   overflow: auto;
@@ -537,7 +530,7 @@ td {
 
 #ihm_desc *{
   all: initial;
-  color: #757575;
+  color: var(--black);
   font-size: 10px;
   word-wrap: break-word;
   overflow: auto;
@@ -578,7 +571,7 @@ td {
 }
 
 .searchDiv > form {
-  color: white;
+  color: var(--black);
 }
 
 label{
@@ -608,7 +601,7 @@ input[type="submit"] {
 }
 
 #length{
-  color: #fff;
+  color: var(--black);
   position: absolute;
   top: 85px;
   right: 10px;
@@ -616,6 +609,6 @@ input[type="submit"] {
 
 .cdcf{
   margin: 80px;
-  color: var(--white);
+  color: var(--black);
   border-collapse:initial;
 }

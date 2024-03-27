@@ -1,18 +1,22 @@
 {% extends "template.html" %}
-{% block title %} Steam {% endblock %}
+{% block title %} words {% endblock %}
 
 {% block container %}
 
 <div class="tp" id="tp">
-  {% for jeu in jeux %} <!-- (idJeu, nomJeu, description, prix, uScore, image, idDev, idEditeur, idPlatforme, descreduit) -->
+  <!-- {% for jeu in jeux %} (idJeu, nomJeu, description, prix, uScore, image, idDev, idEditeur, idPlatforme, descreduit) -->
   <div class="ihm__wrapper">
       <div class="ihm__card">
         <div class="ihm_container">
-
+          <p>Welcome back [name] !</p>
+          <br>
+          <p>Today's word of the day is <br> [word]</p>
+          <br>
+          <p>[définition]</p>
         </div>
       </div>
   </div>
-  {% endfor %}
+  <!-- {% endfor %} -->
 </div>
 
 {% endblock %}
