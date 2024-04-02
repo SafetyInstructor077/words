@@ -52,3 +52,39 @@ window.onscroll = function() {
     prev = current
 };
 
+
+function validerform(event) {
+    event.preventDefault();
+
+    const form = document.forms["iform"]
+    let name = form["name"].value
+    let username = form['username'].value
+    let password = form["password"].value
+
+    fetch("/insert", {
+        method: "POST",
+        body: JSON.stringify({
+            "name": name,
+            "user": username,
+            "password": password
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+    setTimeout(function () {
+        location.reload();
+    }, 6000);
+}
