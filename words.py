@@ -4,7 +4,7 @@ import database as db
 app = Flask(__name__)
 
 @app.route('/')
-def store():
+def start():
     # jeux = db.get_featured()
     # print(jeux)
     return render_template("words.html")
