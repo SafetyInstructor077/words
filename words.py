@@ -1,5 +1,5 @@
 from flask import render_template, request, Flask
-# import database as db
+import database as db
 
 app = Flask(__name__)
 
@@ -16,7 +16,7 @@ def create_account():
         data = request.get_json()
         print(data)
         account = data
-        db.add_account(account["name"], account["username"], account["password"])
+        db.add_account(account)
         return str(db._select(f"select id from accounts where username = '{account['username']}'")[0][0])
     else:
         return render_template("insert.html")
