@@ -9,6 +9,18 @@ def store():
     # print(jeux)
     return render_template("words.html")
 
+@app.route('/insert', methods=['GET', 'POST'])
+def create_account():
+    print("insert")
+    if request.method == 'POST':
+        data = request.get_json()
+        print(data)
+        account = data
+        db.add_account(account["name"], account["username"], account["password"])
+        return str(db._select(f"select id from account where username = '{account['username']}'")[0][0])
+    else:
+        return render_template("insert.html")
+
 # @app.route('/about')
 # def about():
 #     return render_template("about.html")
