@@ -65,7 +65,7 @@ function validerform(event) {
         method: "POST",
         body: JSON.stringify({
             "name": name,
-            "user": username,
+            "username": username,
             "password": password
         }),
         headers: {
