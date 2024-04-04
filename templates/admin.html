@@ -1,25 +1,14 @@
 {% extends "template.html" %}
-{% block title %} Admin {% endblock %}
+{% block title %} Accounts {% endblock %}
 
 {% block container %}
 
-<table class="table">
-    <thead class="thead">
-        <tr>
-            {% for colonne in colonnes %}
-            <td><b>{{ colonne[1] }} : {{ colonne[2] }}</b></td>
-            {% endfor %}
-        </tr>
-        </thead>
-    <tbody class="tbody">
-    {% for jeu in jeux %}
-        <tr>
-        {% for colonne in jeu %}
-            <td>{{ colonne }}</td>
-        {% endfor %}
-        </tr>
+<h1>Accounts</h1>
+<table>
+    <tr><th><b>id</b></th><th><b>username</b></th><th><b>name</b></th><th><b>password</b></th></tr>
+    {% for id, username, name, password in accounts %}
+        <tr><td>{{ id }}</td><td>{{ username }}</td><td>{{ name }}</td><td>{{password}}</td></tr>
     {% endfor %}
-    </tbody>
 </table>
 
 {% endblock %}

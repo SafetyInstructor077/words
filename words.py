@@ -7,6 +7,12 @@ app = Flask(__name__)
 def start():
     return render_template("words.html")
 
+@app.route('/admins')
+def admins():
+    accounts = db.get_all_accounts()
+    print(accounts)
+    return render_template("admin.html", accounts=accounts)
+
 @app.route('/insert', methods=['GET', 'POST'])
 def create_account():
     print("insert")
@@ -14,7 +20,7 @@ def create_account():
         data = request.get_json()
         print(data)
         account = data
-        db.add_account(account)
+        db.add_account(account['username'], account['name'], account['password'])
         return str(db._select(f"select id from accounts where username = '{account['username']}'")[0][0])
     else:
         return render_template("insert.html")
