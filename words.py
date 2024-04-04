@@ -5,8 +5,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def start():
-    # jeux = db.get_featured()
-    # print(jeux)
     return render_template("words.html")
 
 @app.route('/insert', methods=['GET', 'POST'])

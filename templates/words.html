@@ -1,22 +1,27 @@
 {% extends "template.html" %}
-{% block title %} words {% endblock %}
+{% block title %} Steam {% endblock %}
 
 {% block container %}
 
 <div class="tp" id="tp">
-  <!-- {% for jeu in jeux %} (idJeu, nomJeu, description, prix, uScore, image, idDev, idEditeur, idPlatforme, descreduit) -->
   <div class="ihm__wrapper">
       <div class="ihm__card">
         <div class="ihm_container">
-          <p>Welcome back [name] !</p>
-          <br>
-          <p>Today's word of the day is <br> [word]</p>
-          <br>
-          <p>[définition]</p>
+          <div class="ihm_text">
+            <div class="typing-container">
+              <h2 id="sentence" class="sentence">Welcome back [name] !
+                <br>
+                Today's word of the day is <br> [word]
+                <br>
+                [définition]</h2>
+              <div id="feature-text"></div>
+              <span class="input-cursor"></span>
+            </div>
+          </div>
         </div>
+
       </div>
   </div>
-  <!-- {% endfor %} -->
 </div>
 
 {% endblock %}

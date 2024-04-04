@@ -18,8 +18,10 @@ body{
   background: var(--primary);
 }
 
+
+
 ::selection {
-  background-color: #47648788;
+  background-color: #94e1ff88;
   color: var(--black);
 }
 
@@ -36,6 +38,11 @@ body{
   top: 0;
   z-index: 9999;
   transition: all 1s ease;
+  }
+
+  h2{
+    font-family: Space Mono;
+    font-size: 2rem;
   }
 
 .navbar__container {
@@ -294,9 +301,7 @@ cursor: pointer;
   } */
   
   .ihm__wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
   }
   
   .ihm__card {
@@ -308,6 +313,7 @@ cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
   
   /* .ihm__card:first-child {
@@ -418,7 +424,7 @@ cursor: pointer;
 
 /* Footer CSS */
 .footer__container {
-  background: var(--black);
+  background: var(--secondary);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -427,7 +433,7 @@ cursor: pointer;
 }
 
 .website__rights {
-  color: var(--white);
+  color: var(--black);
   font-size: 15px;
   
   
@@ -458,7 +464,7 @@ cursor: pointer;
 td {
   padding:10px 5px;
   margin:10px;
-  border-bottom: 1px #fff solid;
+  border-bottom: 1px #303030 solid;
 }
 
 /* tr{
@@ -495,7 +501,6 @@ td {
   margin-top: 20px;
   max-height: 7rem;
   width: 570px;
-
   color: var(--black);
   font-size: 10px;
   word-wrap: break-word;
@@ -544,16 +549,6 @@ td {
   color: #757575;
 } */
 
-.part2{
-  display: none;
-  font: smaller;
-}
-
-.ihm__image{
-  width: 370px;
-}
-
-
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -598,17 +593,4 @@ input[type="checkbox"] {
 input[type="submit"] {  
   all: unset;
   display: none;
-}
-
-#length{
-  color: var(--black);
-  position: absolute;
-  top: 85px;
-  right: 10px;
-}
-
-.cdcf{
-  margin: 80px;
-  color: var(--black);
-  border-collapse:initial;
 }
