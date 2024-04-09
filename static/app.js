@@ -89,6 +89,8 @@ function validerformcr(event) {
     }, 6000);
 }
 
+// <<<<<<< HEAD
+// typewriter
 function validerformlog(event) {
   event.preventDefault();
 
@@ -134,6 +136,7 @@ const carouselText = [
 $( document ).ready(async function() {
   carousel(carouselText, "#feature-text")
 });
+// >>>>>>> bd4d4e23844ae6580c11ec5e8ddc771b1bc83c95
 
 async function typeSentence(sentence, eleRef, delay = 100) {
   const letters = sentence.split("");
@@ -146,34 +149,23 @@ async function typeSentence(sentence, eleRef, delay = 100) {
   return;
 }
 
-async function deleteSentence(eleRef) {
-  const sentence = $(eleRef).html();
-  const letters = sentence.split("");
-  let i = 0;
-  while(letters.length > 0) {
-    await waitForMs(100);
-    letters.pop();
-    $(eleRef).html(letters.join(""));
-  }
-}
-
-async function carousel(carouselList, eleRef) {
-    var i = 0;
-    while(true) {
-      updateFontColor(eleRef, carouselList[i].color)
-      await typeSentence(carouselList[i].text, eleRef);
-      await waitForMs(1500);
-      await deleteSentence(eleRef);
-      await waitForMs(500);
-      i++
-      if(i >= carouselList.length) {i = 0;}
-    }
-}
-
-function updateFontColor(eleRef, color) {
-  $(eleRef).css('color', color);
-}
 
 function waitForMs(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
+
+var div = document.createElement("br");
+
+async function typewriter() {
+  await typeSentence("Welcome back [name] !", "#line")
+  await waitForMs(100)
+  
+  await waitForMs(100)
+  await typeSentence("Today's word of the day is", "#line")
+  await waitForMs(100)
+  await typeSentence("[word]", "#line")
+  await waitForMs(100)
+  await typeSentence("[definition]", "#line")
+}
+
+typewriter()
