@@ -24,6 +24,17 @@ def create_account():
         return str(db._select(f"select id from accounts where username = '{account['username']}'")[0][0])
     else:
         return render_template("insert.html")
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    print("login")
+    if request.method == 'POST':
+        data = request.get_json()
+        print(data)
+        account = data
+        db.login(account['username'], account['password'])
+        return str(db._select(f"select * from accounts where username = '{account['username']}'")[0][0])
+    else:
+        return render_template("login.html")
 
 # @app.route('/about')
 # def about():
