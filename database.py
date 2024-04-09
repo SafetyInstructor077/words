@@ -19,7 +19,7 @@ def _select(requete, params=None):
             return result
         except Exception as e:
             #gere toutes les exceptions lors de l'execution de la requete
-            print(f"Error during insert operation: {e}")
+            print(f"Error during insert select operation: {e}")
             #s'il y a erreur, 'roll back' tout les changements 
             db.rollback()
         finally:
@@ -38,7 +38,7 @@ def _insert(requete, params=None):
             #valide les modifications dans la base de donnees 
             db.commit()
         except Exception as e:
-            print(f"Error during insert operation: {e}")
+            print(f"Error during insert insert operation: {e}")
             db.rollback()
             # re-lance l'exception pour signaler l'erreur
             raise
@@ -58,3 +58,20 @@ def add_account(username, name, password):
 def get_all_accounts():
     requete = """select id, name, username, password from accounts"""
     return _select(requete)
+
+def login(username, password):
+    ru="""select * from accounts where username=?"""
+    rp="""select password from accounts where username=?"""
+    rur=_select(ru, (username,))
+    print("RUR")
+    print(rur)
+    if rur!=[]:
+        rpr=_select(rp, (username,))
+        print("rpr")
+        print(rpr[0][0])
+        if rpr[0][0]==password:
+            print(f"bravo you logged in, {username, password}")
+        else:
+            print("wrong")
+    else:
+        print("wrong user")

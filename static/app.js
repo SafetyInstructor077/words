@@ -53,7 +53,7 @@ window.onscroll = function() {
 };
 
 
-function validerform(event) {
+function validerformcr(event) {
     event.preventDefault();
 
     const form = document.forms["iform"]
@@ -87,6 +87,40 @@ function validerform(event) {
     setTimeout(function () {
         location.reload();
     }, 6000);
+}
+
+function validerformlog(event) {
+  event.preventDefault();
+
+  const form = document.forms["iformlog"]
+  let username = form['username'].value
+  let password = form["password"].value
+
+  fetch("/login", {
+      method: "POST",
+      body: JSON.stringify({
+          "username": username,
+          "password": password
+      }),
+      headers: {
+          "Content-type": "application/json; charset=UTF-8"
+      }
+  })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+          return response.json();
+      })
+      .then(data => {
+          console.log(data);
+      })
+      .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+      });
+  setTimeout(function () {
+      location.reload();
+  }, 30000);
 }
 
 // typewriter 
