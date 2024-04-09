@@ -1,11 +1,18 @@
-from flask import render_template, request, Flask
+from flask import render_template, request, Flask, session, redirect, url_for
 import database as db
 
 app = Flask(__name__)
+app.secret_key = 'BAD_SECRET_KEY'
+
 
 @app.route('/')
 def start():
     return render_template("words.html")
+@app.route('/logout')
+def logout():
+    session.pop('username', default=None)
+    return '<h1>Session deleted!</h1>'
+
 
 @app.route('/admins')
 def admins():
@@ -31,8 +38,12 @@ def login():
         data = request.get_json()
         print(data)
         account = data
-        db.login(account['username'], account['password'])
-        return str(db._select(f"select * from accounts where username = '{account['username']}'")[0][0])
+        print(db.login(account['username'], account['password']))
+        if db.login(account['username'], account['password']):
+            session['username'] = account['username']
+            return str(db._select(f"select id from accounts where username = '{account['username']}'")[0][0])
+        else:
+            return "Login failed"
     else:
         return render_template("login.html")
 

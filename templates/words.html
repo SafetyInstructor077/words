@@ -1,4 +1,5 @@
 {% extends "template.html" %}
+
 {% block title %} WWW {% endblock %}
 
 {% block container %}
@@ -9,7 +10,9 @@
         <div class="ihm_container">
           <div class="ihm_text">
             <div class="typing-container">
-              <h2 id="sentence" class="sentence">Welcome back [name] !
+              {% if session['username'] %}
+              <h2 id="sentence" class="sentence">Welcome back {{session['username']}} !
+              {% endif %}
                 <br>
                 Today's word of the day is <br> [word]
                 <br>

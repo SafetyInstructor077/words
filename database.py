@@ -71,7 +71,10 @@ def login(username, password):
         print(rpr[0][0])
         if rpr[0][0]==password:
             print(f"bravo you logged in, {username, password}")
+            return True
         else:
             print("wrong")
+            return False
     else:
         print("wrong user")
+        return False 
