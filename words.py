@@ -46,7 +46,9 @@ def login():
             return "Login failed"
     else:
         return render_template("login.html")
-
+@app.route('/wordle')
+def wordle():
+    return render_template("wordle.html")
 # @app.route('/about')
 # def about():
 #     return render_template("about.html")
