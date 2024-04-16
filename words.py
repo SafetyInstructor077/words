@@ -51,10 +51,6 @@ def login():
             return "Login failed"
     else:
         return render_template("login.html")
-    
-@app.route('/journal')
-def journal():
-    return render_template('journal.html')
 
 # @app.route('/about')
 # def about():

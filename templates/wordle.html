@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block title %} Wordle {% endblock %}
+
+{% block container %}
+<h1>Wordle</h1>
+
+<!-- parcoure la liste des lettres du mot, if in word -- turn orange, if well placed turn green, if bad turn grey
+make a table  
+
+css a new input w id = 'letter'-->
+<br><br><br>
+<h2>Find a 5 letter word in 5 tries... Good Luck!</h2>
+<table>
+    <tr id="wordle"><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td></tr>
+    <tr><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td></tr>
+    <tr><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td></tr>
+    <tr><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td></tr>
+    <tr><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td><td id="wordle"><input id="letter" type="text"></input></td></tr>
+
+</table>
+{% endblock %}
