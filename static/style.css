@@ -649,6 +649,7 @@ input[type="submit"] {
   max-height: 100px;
   border-radius: 0;
 }
+<<<<<<< HEAD
 
 /* Wordle */
 
@@ -741,3 +742,5 @@ input[type="submit"] {
   justify-content: center;
   align-items: center;
 }
+=======
+>>>>>>> e828a8dd9bd4fafb1a93ccf433cfee9a12fb3b90
