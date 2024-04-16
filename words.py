@@ -11,7 +11,14 @@ def start():
 
 @app.route('/journal')
 def journal():
-    return render_template("journal.html")
+    if request.method == 'POST':
+        data = request.get_json()
+        print(data)
+        entry = data
+        db.add_entry(entry['message'], entry['status'])
+        return str(db._select(f"select id from accounts where username = '{entry['username']}'")[0][0])
+    else:
+        return render_template("journal.html")
 
 
 @app.route('/logout')
