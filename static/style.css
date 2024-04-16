@@ -18,7 +18,15 @@ body{
   background: var(--primary);
 }
 
+#letter {
+  background-color: #303030;
+  width: 20%;
+  height: 20%;
+}
 
+#wordle{
+  padding: 1px;
+}
 
 ::selection {
   background-color: #94e1ff88;
