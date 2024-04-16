@@ -644,8 +644,8 @@ input[type="submit"] {
 }
 
 #journal__right input{
-  width: 100%;
-  min-height: 100%;
+  width: 90%;
+  min-height: 90%;
   max-height: 100px;
   border-radius: 0;
 }
