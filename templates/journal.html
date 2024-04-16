@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% block title %} journal {% endblock %}
+
+{% block container %}
+
+<div id="journal__container">
+    <div id="journal__left">
+            <h2>history</h2>
+    </div>
+    <form action="post" id="journal__right"><input type="text" name="[datetime]" id="journal__input"></form>
+</div>
+
+{% endblock %}

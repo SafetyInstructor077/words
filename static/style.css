@@ -573,13 +573,14 @@ input {
   all: unset;
   font-size: 15px;
   padding: 3px;
-  background: #45658d;
+  border: 1.5px solid var(--black);
+  background: var(--white);
   border-radius: 5px;
 }
 
 .searchbar{
-  background-color: #45658d;
-  color: #fff;
+  background-color: var(--white);
+  border: 1px solid var(--black);
 }
 
 input[type="checkbox"] {  
@@ -605,4 +606,37 @@ input[type="submit"] {
   40% {opacity: 1;}
   60% {opacity: 0;}
   100% {opacity: 0;}
+}
+
+#journal__container{
+  margin-top: 80px;
+  max-height: 100%;
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+#journal__left{
+  display: flex;
+  position: absolute;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: inherit;
+  width: 17rem;
+  text-align: center;
+}
+
+#journal__right{
+  /* border: 2px solid blueviolet; */
+  width: 100%;
+  margin-left: 17rem;
+}
+
+#journal__right input{
+  width: 100%;
+  min-height: 100%;
+  max-height: 100px;
+  border-radius: 0;
 }

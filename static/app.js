@@ -168,4 +168,4 @@ async function typewriter() {
   await typeSentence("[definition]", "#line")
 }
 
-typewriter()
+// typewriter()
