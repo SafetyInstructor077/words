@@ -9,6 +9,10 @@ app.secret_key = 'BAD_SECRET_KEY'
 def start():
     return render_template("words.html")
 
+@app.route('/journal')
+def start():
+    return render_template("journal.html")
+
 
 @app.route('/logout')
 def logout():
