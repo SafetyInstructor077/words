@@ -84,11 +84,12 @@ padding: 0 85px;
 }
 
 .navbar__item {
-  border: 1px solid;
+  border: 0px solid;
+  border-right: 1px solid;
+  border-right: 1px;
   justify-content: center;
   width: 100%;
   text-align: center;
-
 }
 
 .navbar__links {

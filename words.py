@@ -10,7 +10,7 @@ def start():
     return render_template("words.html")
 
 @app.route('/journal')
-def start():
+def journal():
     return render_template("journal.html")
 
 
