@@ -66,5 +66,11 @@ def login():
 #     print(jeux)
 #     return render_template("list_games.html", jeux=jeux)
 
+@app.route('/wordle')
+def wordle():
+    words = db.get_all_wordles()
+    print(words)
+    return render_template("wordle.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
