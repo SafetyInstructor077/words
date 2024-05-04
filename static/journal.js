@@ -2,13 +2,13 @@ function journal(event) {
     event.preventDefault();
 
     const form = document.forms["journal__right"]
-    let mess = form["journal__input"].value
+    let entry = form["journal__input"].value
     let stat= form["stat"].value
 
     fetch("/insert", {
         method: "POST",
         body: JSON.stringify({
-            "message": mess,
+            "entry": entry,
             "status": stat,
         }),
         headers: {
