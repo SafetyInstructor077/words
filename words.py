@@ -75,8 +75,8 @@ def login():
 
 @app.route('/wordle')
 def wordle():
-    words = db.get_all_wordles()
-    print(words)
+    # words = db.get_all_wordles()
+    # print(words)
     return render_template("wordle.html")
 
 if __name__ == "__main__":
