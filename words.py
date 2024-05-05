@@ -20,13 +20,26 @@ def start():
 #     else:
 #         return render_template("journal.html")
 
-@app.route('/journal', methods=['GET', 'POST'])
+# @app.route('/journal', methods=['GET','POST'])
+# def journal():
+#     if request.method == 'POST':
+#         entry = request.form['entry']
+#         stat = request.form['stat']
+#         db.add_entry(entry, stat)
+#         return redirect(url_for('journal'))  # Redirect to the same page after submission
+#     else:
+#         return render_template("journal.html")
+
+@app.route('/journal', methods=['GET','POST'])
 def journal():
     if request.method == 'POST':
-        entry = request.form['entry']
-        stat = request.form['stat']
-        db.add_entry(entry, stat)
-        return redirect(url_for('journal'))  # Redirect to the same page after submission
+        try:
+            entry = request.form['entry']
+            stat = request.form['stat']
+            db.add_entry(entry, stat)
+            return redirect(url_for('journal'))  # Redirect to the same page after submission
+        except KeyError:
+            return "Missing 'entry' or 'stat' field in the form data", 400  # Return a 400 Bad Request error
     else:
         return render_template("journal.html")
 
