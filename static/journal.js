@@ -33,12 +33,20 @@
 // }
 
 function journal(event) {
+    console.log('journal')
+    // Prevent the default form submission
     event.preventDefault();
 
+    // Get the form element
     const form = document.getElementById("journal");
-    let entry = document.getElementById("input").value;
-    let stat = form["stat"].value;
 
+    // Extract form data
+    let entry = form.querySelector('input[name="[datetime]"]').value;
+    let stat = form.querySelector('input[name="stat"]:checked').value;
+
+    // Perform any validation if needed
+
+    // Make the fetch request
     fetch("/journal", {
         method: "POST",
         body: JSON.stringify({
@@ -49,16 +57,17 @@ function journal(event) {
             "Content-type": "application/json; charset=UTF-8"
         }
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        // Optionally, you can perform any actions after successful submission
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
 }

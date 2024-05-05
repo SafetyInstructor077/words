@@ -625,9 +625,6 @@ input[type="submit"] {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-
 
 }
 
@@ -645,6 +642,9 @@ input[type="submit"] {
   /* border: 2px solid blueviolet; */
   width: 100%;
   margin-left: 17rem;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 #journal__right input{
@@ -652,6 +652,22 @@ input[type="submit"] {
   min-height: 100%;
   max-height: 100px;
   border-radius: 0;
+
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: #007bff;
+  color: #fff;
 }
 
 /* Wordle */
