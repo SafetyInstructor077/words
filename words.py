@@ -9,14 +9,24 @@ app.secret_key = 'BAD_SECRET_KEY'
 def start():
     return render_template("words.html")
 
-@app.route('/journal')
+# @app.route('/journal')
+# def journal():
+#     if request.method == 'POST':
+#         data = request.get_json()
+#         print(data)
+#         entry = data
+#         db.add_entry(entry['message'], entry['status'])
+#         return str(db._select(f"select id from accounts where username = '{entry['username']}'")[0][0])
+#     else:
+#         return render_template("journal.html")
+
+@app.route('/journal', methods=['GET', 'POST'])
 def journal():
     if request.method == 'POST':
-        data = request.get_json()
-        print(data)
-        entry = data
-        db.add_entry(entry['message'], entry['status'])
-        return str(db._select(f"select id from accounts where username = '{entry['username']}'")[0][0])
+        entry = request.form['entry']
+        stat = request.form['stat']
+        db.add_entry(entry, stat)
+        return redirect(url_for('journal'))  # Redirect to the same page after submission
     else:
         return render_template("journal.html")
 
