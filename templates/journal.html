@@ -8,8 +8,8 @@
             <h2>history</h2>
             <table>
                 <tr><th><b>Entries</b></th></tr>
-                {% for entry, username in user %}
-                    <tr><td>{{ entry }}</td><td>{{ username }}</td></tr>
+                {% for entries in user[0] %}
+                    <tr><td>{{ entries }}</td><td>{{ user[1] }}</td></tr>
                 {% endfor %}
             </table>
     </div>
@@ -22,14 +22,15 @@
     <label for="public">Public</label><br>
     <input type="radio" id="stat" name="stat" value=0>
     <label for="private">Private</label><br><br> -->
-    
-<<<<<<< HEAD
-    <input type="button" value="Submit" onclick="journal(event, session['username'])">
-=======
+ 
+    <!-- <input type="button" value="Submit" onclick="journal(event, session['username'])"> -->
     </div>
-    <input id="jrb" type="button" value="Submit" onclick="journal(event)">
->>>>>>> c88dd52429483d6ea00dad8b9608137706cc30d3
+    {% for uid in [user[2]] %}
+        <p id="uid" display=None>{{uid}}</p>
+        <input id="jrb" type="button" value="Submit" onclick="journal(event, document.getElementById('uid').innerHTML)">
+    {% endfor %}
 </form>
 </div>
+
 
 {% endblock %}

@@ -55,14 +55,14 @@ def add_account(username, name, password):
     id = get_max_id_account()+1
     return _select(requete, (id, username, name, password))
 
-def add_entry(entry, user):
-    print('d', entry, user)
-    requete=f"""insert into j_entries (user, entries) values ((select id from Accounts Where username = ?), ?) """
-    return _select(requete, (user, entry))
+def add_entry(entry, uid):
+    print('d', entry, uid)
+    requete=f"""insert into j_entries (user, entry) values ((?), ?) """
+    return _select(requete, (uid, entry))
 
 def entries_by(user):
-    requete = """select j_entries.entry from j_entries, accounts where accounts.username=? and j_entries.user=accounts.id"""
-    return _select(requete, (user))
+    requete = f"select j_entries.entry from j_entries, accounts where accounts.username='{user}' and j_entries.user=accounts.id"
+    return _select(requete)
 
 def get_all_accounts():
     requete = """select id, name, username, password from accounts"""

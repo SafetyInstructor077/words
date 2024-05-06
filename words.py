@@ -38,18 +38,21 @@ def com():
 @app.route('/journal', methods=['GET','POST'])
 def journal():
     user = session.get('username')
+    print(user)
     entries=db.entries_by(user)
+    uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
+    user = [entries, user, uid]
+    print(user)
     if request.method == 'POST':
-        try:
-            entry = request.form['entry']
+        #try:
+            entry = request.json['entry']
+            print(entry)
             # stat = request.form['stat']
-            uid= f"""select id from accounts where username={user}"""
-            print(entry, user, uid)
 
-            db.add_entry(entry, user)
-            return redirect(url_for('journal'))  # Redirect to the same page after submission
-        except KeyError:
-            return "Missing 'entry' or 'stat' field in the form data", 400  # Return a 400 Bad Request error
+            db.add_entry(entry, uid)
+
+            return "yo" #redirect(url_for('journal'))  # Redirect to the same page after submission
+            #return "Missing 'entry' or 'stat' field in the form data", 400  # Return a 400 Bad Request error
     return render_template("journal.html", user=user)
 
 

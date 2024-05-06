@@ -43,6 +43,7 @@ function journal(event, user) {
     // Extract form data
     let entry = form.querySelector('input[name="[datetime]"]').value;
     console.log(entry)
+    console.log(user)
     // let stat = form.querySelector('input[name="stat"]:checked').value;
 
     // Perform any validation if needed
@@ -59,16 +60,17 @@ function journal(event, user) {
         }
     })
     .then(response => {
+
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-        // Optionally, you can perform any actions after successful submission
+        location.reload()
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
 }
+// .then(data => {
+//     console.log(data);
+//     // Optionally, you can perform any actions after successful submission
+// })
