@@ -7,7 +7,6 @@
     <div id="journal__left">
             <h2>history</h2>
     </div>
-    <script src="{{ url_for('static', filename='journal.js') }}"></script>
     <form method="post" id="journal">
     <div id="journal__right">
         <input type="text" name="[datetime]" id="input"><br>
@@ -18,9 +17,9 @@
     <input type="radio" id="stat" name="stat" value=0>
     <label for="private">Private</label><br><br> -->
     
-    <input type="button" value="Submit" onclick="journal(event)">
+    </div>
+    <input id="jrb" type="button" value="Submit" onclick="journal(event)">
 </form>
-</div>
 </div>
 
 {% endblock %}
