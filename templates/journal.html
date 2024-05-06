@@ -13,7 +13,6 @@
                 {% endfor %}
             </table>
     </div>
-    <script src="{{ url_for('static', filename='journal.js') }}"></script>
     <form method="post" id="journal">
     <div id="journal__right">
         <input type="text" name="[datetime]" id="input"><br>
@@ -24,9 +23,13 @@
     <input type="radio" id="stat" name="stat" value=0>
     <label for="private">Private</label><br><br> -->
     
+<<<<<<< HEAD
     <input type="button" value="Submit" onclick="journal(event, session['username'])">
+=======
+    </div>
+    <input id="jrb" type="button" value="Submit" onclick="journal(event)">
+>>>>>>> c88dd52429483d6ea00dad8b9608137706cc30d3
 </form>
-</div>
 </div>
 
 {% endblock %}

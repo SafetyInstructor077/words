@@ -107,9 +107,11 @@ def login():
 
 @app.route('/wordle')
 def wordle():
-    # words = db.get_all_wordles()
-    # print(words)
     return render_template("wordle.html")
+
+@app.route('/wordsjson')
+def wordsjson():
+    return open("sgb-words.json", "r").read()
 
 
 if __name__ == "__main__":
