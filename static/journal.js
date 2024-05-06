@@ -42,7 +42,8 @@ function journal(event) {
 
     // Extract form data
     let entry = form.querySelector('input[name="[datetime]"]').value;
-    let stat = form.querySelector('input[name="stat"]:checked').value;
+    console.log(entry)
+    // let stat = form.querySelector('input[name="stat"]:checked').value;
 
     // Perform any validation if needed
 
@@ -51,7 +52,6 @@ function journal(event) {
         method: "POST",
         body: JSON.stringify({
             "entry": entry,
-            "status": stat,
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"

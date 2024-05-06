@@ -35,8 +35,11 @@ def journal():
     if request.method == 'POST':
         try:
             entry = request.form['entry']
-            stat = request.form['stat']
-            db.add_entry(entry, stat)
+            # stat = request.form['stat']
+            user = f""" SELECT id from Accounts WHERE username={session.get('username')}"""
+            print(entry, user)
+
+            db.add_entry(entry, user)
             return redirect(url_for('journal'))  # Redirect to the same page after submission
         except KeyError:
             return "Missing 'entry' or 'stat' field in the form data", 400  # Return a 400 Bad Request error
