@@ -9,6 +9,11 @@ app.secret_key = 'BAD_SECRET_KEY'
 def start():
     return render_template("words.html")
 
+@app.route('/com')
+def com():
+    users=db.oeuvres_de_type(id_type)
+    return render_template("community.html", users=user)
+
 # @app.route('/journal')
 # def journal():
 #     if request.method == 'POST':
@@ -32,19 +37,20 @@ def start():
 
 @app.route('/journal', methods=['GET','POST'])
 def journal():
+    user = session.get('username')
+    entries=db.entries_by(user)
     if request.method == 'POST':
         try:
             entry = request.form['entry']
             # stat = request.form['stat']
-            user = f""" SELECT id from Accounts WHERE username={session.get('username')}"""
-            print(entry, user)
+            uid= f"""select id from accounts where username={user}"""
+            print(entry, user, uid)
 
             db.add_entry(entry, user)
             return redirect(url_for('journal'))  # Redirect to the same page after submission
         except KeyError:
             return "Missing 'entry' or 'stat' field in the form data", 400  # Return a 400 Bad Request error
-    else:
-        return render_template("journal.html")
+    return render_template("journal.html", user=user)
 
 
 @app.route('/logout')

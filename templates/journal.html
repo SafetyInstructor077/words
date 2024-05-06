@@ -6,6 +6,12 @@
 <div id="journal__container">
     <div id="journal__left">
             <h2>history</h2>
+            <table>
+                <tr><th><b>Entries</b></th></tr>
+                {% for entry, username in user %}
+                    <tr><td>{{ entry }}</td><td>{{ username }}</td></tr>
+                {% endfor %}
+            </table>
     </div>
     <script src="{{ url_for('static', filename='journal.js') }}"></script>
     <form method="post" id="journal">
@@ -18,7 +24,7 @@
     <input type="radio" id="stat" name="stat" value=0>
     <label for="private">Private</label><br><br> -->
     
-    <input type="button" value="Submit" onclick="journal(event)">
+    <input type="button" value="Submit" onclick="journal(event, session['username'])">
 </form>
 </div>
 </div>

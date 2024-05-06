@@ -57,8 +57,12 @@ def add_account(username, name, password):
 
 def add_entry(entry, user):
     print('d', entry, user)
-    requete=f"""insert into j_entries (user, entry) values ((select id from Accounts Where username = '{account['username']}), ?) """
+    requete=f"""insert into j_entries (user, entries) values ((select id from Accounts Where username = ?), ?) """
     return _select(requete, (user, entry))
+
+def entries_by(user):
+    requete = """select j_entries.entry from j_entries, accounts where accounts.username=? and j_entries.user=accounts.id"""
+    return _select(requete, (user))
 
 def get_all_accounts():
     requete = """select id, name, username, password from accounts"""

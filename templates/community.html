@@ -1,34 +1,14 @@
 {% extends "template.html" %}
-{% block title %} Liste de tous les jeux {% endblock %}
+{% block title %} Community {% endblock %}
 
 {% block container %}
 
-<h1 class="title is-1">Liste de tous les jeux</h1>
-<table class="table is-narrow is-hoverable is-bordered">
-    <thead>
-        <tr>
-            <td><b>Titre</b></td>
-            <td><b>Prix</b></td>
-            <td><b>Score</b></td>
-            <td><b>Date de sortie</b></td>
-            <td><b>Succès</b></td>
-            <td><b>Développeur</b></td>
-            <td><b>Éditeur</b></td>
-            <td><b>Platforme(s)</b></td>
-        </tr>
-        </thead>
-    <tbody>
-    {% for nomJeu, idJeu, prix, uScore, date, achievements, nomDev, nomEditeur, nomPlat in jeux %}
-        <tr><td><a href="/jeu/{{ idJeu }}">{{ nomJeu }}</a></td>
-            <td><a href="">${{ prix/100 }}</a></td>
-            <td><a href="">{{ uScore }}</a></td>
-            <td><a href="">{{ date }}</a></td>
-            <td>{{ achievements }}</td>
-            <td><a href="">{{ nomDev }}</a></td>
-            <td><a href="">{{ nomEditeur }}</a></td>
-            <td><a href="">{{ nomPlat }}</a></td></tr>
-    {% endfor %}
-    </tbody>
-</table>
+<div id="journal__container">
+    <table>
+        <tr><th>user</th><th>activity</th></tr>
+        
+    </table>
+
+</div>
 
 {% endblock %}

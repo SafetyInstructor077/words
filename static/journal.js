@@ -32,7 +32,7 @@
 //     }, 6000);
 // }
 
-function journal(event) {
+function journal(event, user) {
     console.log('journal')
     // Prevent the default form submission
     event.preventDefault();
@@ -52,6 +52,7 @@ function journal(event) {
         method: "POST",
         body: JSON.stringify({
             "entry": entry,
+            "user": user,
         }),
         headers: {
             "Content-type": "application/json; charset=UTF-8"
