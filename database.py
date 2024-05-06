@@ -82,4 +82,25 @@ def login(username, password):
             return False
     else:
         print("wrong user")
-        return False 
+        return False
+    
+
+# import csv
+# import json
+
+# #Read CSV file and convert it to a dictionary
+# csv_file = "sgb-words.csv"
+# json_data = []
+
+# with open(csv_file, 'r') as file:
+#     csv_reader = csv.reader(file)
+#     for row in csv_reader:
+#         json_data.append(row[1])
+
+# # Write JSON data to a file
+# json_file = "output.json"
+# with open(json_file, 'w') as file:
+#     json.dump(json_data, file)
+
+# print("Conversion complete. JSON file created: ", json_file)
+
