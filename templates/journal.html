@@ -7,7 +7,6 @@
     <div id="journal__left">
             <h2>history</h2>
             <table>
-                <!-- <tr><th><b>Entries</b></th></tr> -->
                 {% for entries in user[0] %}
                     <tr><td>{{ entries[0] }}</td></tr>
                 {% endfor %}
@@ -16,14 +15,6 @@
     <form method="post" id="journal">
     <div id="journal__right">
         <input type="text" name="[datetime]" id="input"><br>
-    
-    <!-- <br><br><br><br>
-    <input type="radio" id="stat" name="stat" value=1>
-    <label for="public">Public</label><br>
-    <input type="radio" id="stat" name="stat" value=0>
-    <label for="private">Private</label><br><br> -->
- 
-    <!-- <input type="button" value="Submit" onclick="journal(event, session['username'])"> -->
     </div>
     {% for uid in [user[2]] %}
         <f id="uid">{{uid}}</f>
