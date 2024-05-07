@@ -15,13 +15,21 @@ def start():
 
 @app.route('/com')
 def com():
-    users=db.oeuvres_de_type(id_type)
-    return render_template("community.html", users=user)
+    user = session.get('username')
+    uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
+    friend=f"""select id from amities where id1={uid} or id2={uid} """
+    activity=db.get_entries_by(uid, friend)
+    print(activity)
+    return render_template("community.html", activity=activity)
 
 @app.route('/friend')
 def friend():
     accounts = db.get_all_accounts()
     print(accounts)
+    user = session.get('username')
+    uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
+
+
     
     return render_template("list.html", accounts=accounts)
 
@@ -81,16 +89,6 @@ def login():
     else:
         return render_template("login.html")
 
-# @app.route('/about')
-# def about():
-#     return render_template("about.html")
-
-# @app.route('/library')
-# def library():
-#     jeux = db.get_all_jeux()
-#     print(jeux)
-#     return render_template("list_games.html", jeux=jeux)
-
 @app.route('/wordle')
 def wordle():
     return render_template("wordle.html")
@@ -98,7 +96,6 @@ def wordle():
 @app.route('/wordsjson')
 def wordsjson():
     return open("sgb-words.json", "r").read()
-
 
 if __name__ == "__main__":
     app.run(debug=True)
