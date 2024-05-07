@@ -26,7 +26,7 @@
     <!-- <input type="button" value="Submit" onclick="journal(event, session['username'])"> -->
     </div>
     {% for uid in [user[2]] %}
-        <p id="uid" display=None>{{uid}}</p>
+        <f id="uid">{{uid}}</f>
         <input id="jrb" type="button" value="Submit" onclick="journal(event, document.getElementById('uid').innerHTML)">
     {% endfor %}
 </form>

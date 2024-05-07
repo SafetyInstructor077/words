@@ -45,11 +45,11 @@ def logout():
     return '<h1>Session deleted!</h1>'
 
 
-@app.route('/admins')
+@app.route('/friend')
 def admins():
     accounts = db.get_all_accounts()
     print(accounts)
-    return render_template("admin.html", accounts=accounts)
+    return render_template("list.html", accounts=accounts)
 
 
 @app.route('/insert', methods=['GET', 'POST'])
