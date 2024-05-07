@@ -5,7 +5,9 @@
 <div class="tp" id="tp">
 
 <h1>Accounts</h1>
-<f id="me">{{session['username']}}</f>
+{% if uid%}
+<f id="me">{{uid]}}</f>
+{%endif%}
 <table>
     <tr><th><f>id</f></th><th><b>username</b></th><th><b>name</b></th><th>Friend?</th></tr>
     {% for id, username, name, password in accounts %}

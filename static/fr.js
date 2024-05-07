@@ -1,7 +1,7 @@
-window.friend = (event, user, friende) => {
+window.friend = (event, uid, friende) => {
     event.preventDefault();
     // let friende = document.getElementById("uid");
-    console.log(user, friende);
+    console.log(uid, friende);
     fetch("/friend", {
         method: "POST",
         body: JSON.stringify({

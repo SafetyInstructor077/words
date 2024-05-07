@@ -31,17 +31,19 @@ def com():
     print(activity)
     return render_template("community.html", activity=activity)
 
-@app.route('/friend')
+@app.route('/friend', methods=['GET','POST'])
 def friend():
     accounts = db.get_all_accounts()
     print(accounts)
     user = session.get('username')
     uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
+    print(uid)
     if request.method=='POST':
         friende = request.json['friende']
+        print(friende)
         db.friend(uid, friende)
 
-    return render_template("list.html", accounts=accounts)
+    return render_template("list.html", accounts=accounts, uid=uid)
 
 @app.route('/journal', methods=['GET','POST'])
 def journal():
