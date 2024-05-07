@@ -80,6 +80,7 @@ function validerformcr(event) {
         })
         .then(data => {
             console.log(data);
+            window.location.href = "../"
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
@@ -89,8 +90,6 @@ function validerformcr(event) {
     }, 6000);
 }
 
-// <<<<<<< HEAD
-// typewriter
 function validerformlog(event) {
   event.preventDefault();
 
@@ -116,6 +115,7 @@ function validerformlog(event) {
       })
       .then(data => {
           console.log(data);
+          window.location.href = "../"
       })
       .catch(error => {
           console.error('There was a problem with the fetch operation:', error);
@@ -124,6 +124,7 @@ function validerformlog(event) {
       location.reload();
   }, 30000);
 }
+
 
 // typewriter 
 
