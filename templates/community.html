@@ -7,7 +7,9 @@
     <table>
         <tr><th>user</th><th>activity</th></tr>
 {% for i in activity%}
-        <tr id="activity"><td>{{i[0]}}</td><td>{{i[1]}}</td></tr>
+        {% for j in i%}
+        <tr id="activity"><td>{{j[0]}}</td><td>{{j[1]}}</td></tr>
+        {%endfor%}
 {%endfor%}
     </table>
 

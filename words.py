@@ -27,6 +27,7 @@ def com():
         print(friend[i][0])
         activity.append(db.get_entries_by(friend[i][0]))
         print('act',activity)
+    activity.pop(0)
     print(activity)
     return render_template("community.html", activity=activity)
 
