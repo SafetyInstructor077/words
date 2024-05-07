@@ -11,10 +11,12 @@
           <div class="ihm_text">
 <!-- <<<<<<< HEAD -->
             <div class="typing-container">
-              {% if session['username'] %}
-              <h2 id="sentence" class="sentence">Welcome back {{session['username']}} ! <br> Today's word of the day is <br> [word]<br>
-                [définition]</h2>
+              {% if uname %}
+              {% for word, def in wordn%}
+              <h2 id="sentence" class="sentence">Welcome back {{uname}} ! <br> Your new word is : <br> {{word}},<br>
+                {{def}}</h2>
               <span class="input-cursor"></span>
+              {%endfor%}
               {% endif %}
                 
                 

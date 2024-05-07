@@ -68,6 +68,10 @@ def get_all_accounts():
     requete = """select id, name, username, password from accounts"""
     return _select(requete)
 
+def get_word():
+    requete="""SELECT *  FROM words ORDER BY random() LIMIT 1"""
+    return _select(requete)
+
 def login(username, password):
     ru="""select * from accounts where username=?"""
     rp="""select password from accounts where username=?"""
