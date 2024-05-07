@@ -54,16 +54,12 @@ def journal():
     uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
     user = [entries, user, uid]
     print(user)
-    if request.method == 'POST':
-        #try:
+    if request.method == 'POST':            
             entry = request.json['entry']
             print(entry)
-            # stat = request.form['stat']
-
             db.add_entry(entry, uid)
 
-            return "yo" #redirect(url_for('journal'))  # Redirect to the same page after submission
-            #return "Missing 'entry' or 'stat' field in the form data", 400  # Return a 400 Bad Request error
+            # return redirect(url_for('journal'))  # Redirect to the same page after submission
     return render_template("journal.html", user=user)
 
 
