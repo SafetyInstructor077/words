@@ -37,9 +37,10 @@ def friend():
     print(accounts)
     user = session.get('username')
     uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
+    if request.method=='POST':
+        friende = request.json['friende']
+        db.friend(uid, friende)
 
-
-    
     return render_template("list.html", accounts=accounts)
 
 @app.route('/journal', methods=['GET','POST'])
@@ -66,7 +67,7 @@ def journal():
 @app.route('/logout')
 def logout():
     session.pop('username', default=None)
-    return '<h1>Session deleted!</h1>'
+    return redirect('/')
 
 
 @app.route('/insert', methods=['GET', 'POST'])
