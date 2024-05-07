@@ -5,6 +5,14 @@ const navLogo = document.querySelector('#navbar__logo');
 const nav = document.querySelector('.navbar');
 
 
+// friending
+// function friend(event, user, friend){
+//   event.preventDefault();
+//   let friend = document.getElementById("uid");
+//   console.log(user, friend)
+
+// }
+
 // Display Mobile Menu
 const mobileMenu = () => {
   menu.classList.toggle('is-active');
@@ -168,10 +176,3 @@ async function typewriter() {
   await typeSentence("[definition]", "#line")
 };
 
-// friending
-function friend(event, user, friend){
-  event.preventDefault();
-  let friend = document.getElementById("uid");
-  console.log(user, friend)
-
-}
