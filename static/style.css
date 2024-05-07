@@ -637,13 +637,58 @@ input[type="submit"] {
   display: none;
 }
 
-.input-cursor {
+#input-cursor, #input-cursor2, #input-cursor3, #input-cursor4{
   display: inline-block;
   width: 2px;
   height: 2.3rem;
   background-color: var(--black);
   margin-left: 8px;
   animation: blink .6s linear infinite alternate;
+}
+
+.typing_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.extra_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#line {
+  display: none;
+}
+
+#input-cursor2 {
+  display: none;
+}
+
+#input-cursor3 {
+  display: none;
+}
+
+#input-cursor4 {
+  display: none;
+}
+
+#line{
+  display: none;
+}
+
+#line2{
+  display: none;
+}
+
+#line3{
+  display: none;
+}
+
+#line4{
+  display: none;
 }
 
 @keyframes blink {

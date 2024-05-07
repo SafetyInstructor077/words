@@ -1,5 +1,6 @@
 from flask import render_template, request, Flask, session, redirect, url_for
 import database as db
+from flask import jsonify
 
 app = Flask(__name__)
 app.secret_key = 'BAD_SECRET_KEY'
@@ -96,6 +97,13 @@ def wordle():
 @app.route('/wordsjson')
 def wordsjson():
     return open("sgb-words.json", "r").read()
+
+@app.route('/jsonuser')
+def jsonuser():
+    user = session.get('username')
+    uname = db._select(f"""select name from accounts where username='{user}'""")[0][0]
+    wordn = db.get_word()
+    return jsonify({"wordn": wordn, "uname": uname})
 
 if __name__ == "__main__":
     app.run(debug=True)

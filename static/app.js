@@ -127,45 +127,55 @@ function validerformlog(event) {
 
 
 // typewriter 
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('../jsonuser')
+    .then(response => response.json())
+    .then(data => {
+      const wordn = data.wordn;
+      const uname = data.uname;
 
-const carouselText = [
-  {text: "Apple", color: "red"},
-  {text: "Orange", color: "orange"},
-  {text: "Lemon", color: "yellow"}
-]
+      async function typeSentence(sentence, eleRef, delay = 100) {
+        const letters = sentence.split("");
+        let i = 0;
+        while (i < letters.length) {
+          await waitForMs(delay);
+          $(eleRef).append(letters[i]);
+          i++;
+        }
+      }
 
-$( document ).ready(async function() {
-  carousel(carouselText, "#feature-text")
-});
-// >>>>>>> bd4d4e23844ae6580c11ec5e8ddc771b1bc83c95
+      function waitForMs(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
 
-async function typeSentence(sentence, eleRef, delay = 100) {
-  const letters = sentence.split("");
-  let i = 0;
-  while(i < letters.length) {
-    await waitForMs(delay);
-    $(eleRef).append(letters[i]);
-    i++
-  }
-  return;
+      function brcreate(line) {
+        var br = document.createElement("br");
+        document.getElementById(line).appendChild(br);
+      }
+
+      typewriter();
+
+      async function typewriter() {
+        document.getElementById("line").style.display = "block";
+        await typeSentence("Welcome back " + uname + "!", "#line");
+        await waitForMs(100);
+        await brcreate('line');
+        document.getElementById("input-cursor").style.display = "none";
+        document.getElementById("input-cursor2").style.display = "inline-block";
+        document.getElementById("line2").style.display = "block";
+        await typeSentence("Today's word of the day is", "#line2");
+        await waitForMs(100);
+        await brcreate('line2');
+        document.getElementById("input-cursor2").style.display = "none";
+        document.getElementById("input-cursor3").style.display = "inline-block";
+        document.getElementById("line3").style.display = "block";
+        await typeSentence(wordn[0][0], "#line3");
+        await waitForMs(100);
+        await brcreate('line3');
+        document.getElementById("input-cursor3").style.display = "none";
+        document.getElementById("input-cursor4").style.display = "inline-block";
+        document.getElementById("line4").style.display = "block";
+        await typeSentence(wordn[0][1], "#line4");
 }
 
-
-function waitForMs(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-var div = document.createElement("br");
-
-async function typewriter() {
-  await typeSentence("Welcome back [name] !", "#line")
-  await waitForMs(100)
-  
-  await waitForMs(100)
-  await typeSentence("Today's word of the day is", "#line")
-  await waitForMs(100)
-  await typeSentence("[word]", "#line")
-  await waitForMs(100)
-  await typeSentence("[definition]", "#line")
-};
-
+      })})

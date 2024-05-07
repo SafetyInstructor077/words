@@ -10,16 +10,29 @@
         <div class="ihm_container">
           <div class="ihm_text">
 <!-- <<<<<<< HEAD -->
-            <div class="typing-container">
+            <div class="typing_container">
               {% if uname %}
               {% for word, def in wordn%}
-              <h2 id="sentence" class="sentence">Welcome back {{uname}} ! <br> Your new word is : <br> {{word}},<br>
-                {{def}}</h2>
-              <span class="input-cursor"></span>
+              <!-- <h2 id="sentence" class="sentence">Welcome back {{uname}} ! <br> Your new word is : <br> {{word}},<br>
+                {{def}}</h2> -->
+                <div class="extra_container">
+                  <h2 id="line"></h2>
+                <span id="input-cursor"></span>
+                </div>
+                <div class="extra_container">
+                  <h2 id="line2"></h2>
+                <span id="input-cursor2"></span>
+                </div>
+                <div class="extra_container">
+                  <h2 id="line3"></h2>
+                <span id="input-cursor3"></span>
+                </div>
+                <div class="extra_container">
+                  <h2 id="line4"></h2>
+                <span id="input-cursor4"></span>
+                </div>
               {%endfor%}
-              {% endif %}
-                
-                
+              {% endif %} 
             </div>
 <!-- ======= -->
             <!-- <h2 id="line"></h2>
