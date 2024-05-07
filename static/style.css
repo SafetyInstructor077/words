@@ -837,3 +837,9 @@ input[type="submit"] {
   background-color: #dbd5dd; 
   margin: 5px;
 }
+
+#activity{
+  border-radius: 10px; 
+  width: 60%;
+  padding: 20px; 
+}
