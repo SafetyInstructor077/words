@@ -3,6 +3,8 @@
 
 {% block container %}
 <div class="tp">
+    <div class="round-contain">
+        <h1>Create an Account</h1>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
     <form action="/insert" method="post" class="iform" id="iform">
         
@@ -19,7 +21,8 @@
         # <input type="number" id="repass" name="repass"><br><br> -->
 
     
-        <input type="button" value="Submit" onclick="validerformcr(event)">
+        <input type="button" value="Submit" id="jrb" onclick="validerformcr(event)">
     </form>
+    </div>
 </div>
 {% endblock %}

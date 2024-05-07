@@ -2,13 +2,16 @@
 {% block title %} Accounts {% endblock %}
 
 {% block container %}
+<div class="tp" id="tp">
+
 <h1>Accounts</h1>
-<f id="me"></f>
+<f id="me">{{session['username']}}</f>
 <table>
     <tr><th><f>id</f></th><th><b>username</b></th><th><b>name</b></th><th>Friend?</th></tr>
     {% for id, username, name, password in accounts %}
-        <tr><td><f id="uid">{{id}}</f></td><td>{{ username }}</td><td>{{ name }}</td><td><input id="jrb" type="button" value=Friend onclick="window.friend(event, 6,document.parentElement.firstChild.firstChild.innerHTML)"></td></tr>
+        <tr><td><f id="uid">{{id}}</f></td><td>{{ username }}</td><td>{{ name }}</td><td><input id="jrb" type="button" value=Friend onclick="window.friend(event, document.getElementById('me'),document.parentElement.firstChild.firstChild.innerHTML)"></td></tr>
     {% endfor %}
 </table>
+</div>
 
 {% endblock %}

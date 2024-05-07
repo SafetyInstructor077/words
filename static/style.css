@@ -681,9 +681,9 @@ input[type="submit"] {
   flex: 1;
   padding: 20px;
   display: flex;
+  align-self: right;
   flex-direction: column;
   align-items: center;
-
 }
 
 #input {
@@ -699,7 +699,7 @@ input[type="submit"] {
 
 #jrb {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #AEDCF6;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -708,7 +708,7 @@ input[type="submit"] {
 }
 
 #jrb:hover {
-  background-color: #0056b3;
+  background-color: #9ec6de;
 }
 
 
@@ -823,4 +823,17 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.round-contain {
+  width: 300px; 
+  padding: 20px; 
+  border-radius: 10px; 
+  background-color: #dbd5dd; 
+  justify-content: center;
+}
+
+.iform, #iform{
+  background-color: #dbd5dd; 
+  margin: 5px;
 }

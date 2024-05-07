@@ -8,6 +8,8 @@ app.secret_key = 'BAD_SECRET_KEY'
 @app.route('/')
 def start():
     user = session.get('username')
+    if user is None:
+        return redirect('/login')
     uname= db._select(f"""select name from accounts where username='{user}'""")[0][0]
     wordn=db.get_word()
     print(wordn)
