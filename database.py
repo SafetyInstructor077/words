@@ -96,9 +96,10 @@ def friend(user, friend):
     requete="""INSERT INTO amities (id1, id2) VALUES (?,?)"""
     return _select(requete, (user, friend))
 
-def get_entries_by(user, friend):
-    requete="""SELECT Accounts.username, j_entries.entry FROM j_entries, Accounts WHERE j_entries.user=accounts.id and (j_entries.user=? or j_entries.user=?)"""
-    return _select(requete, (user, friend))
+def get_entries_by(user):
+    print(user)
+    requete="""SELECT Accounts.username, j_entries.entry FROM j_entries, Accounts WHERE j_entries.user=accounts.id and j_entries.user=? """
+    return _select(requete, (str(user)))
 
 
 # import csv

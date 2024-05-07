@@ -17,10 +17,16 @@ def start():
 
 @app.route('/com')
 def com():
+    activity=[]
     user = session.get('username')
     uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
-    friend=f"""select id from amities where id1={uid} or id2={uid} """
-    activity=db.get_entries_by(uid, friend)
+    print(uid)
+    friend = db._select(f"""select distinct accounts.id from accounts, amities where (accounts.id=id1 or accounts.id=id2) and (id1={uid} or id2={uid}) """)
+    print(friend)
+    for i in range(len(friend)):
+        print(friend[i][0])
+        activity.append(db.get_entries_by(friend[i][0]))
+        print('act',activity)
     print(activity)
     return render_template("community.html", activity=activity)
 

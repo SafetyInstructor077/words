@@ -5,12 +5,13 @@
 
 <div id="journal__container">
     <table id="activity">
-{% for user, entry in activity%}
         <tr><th>user</th><th>activity</th></tr>
-        <tr><td>{{user}}</td><td>{{entry}}</td></tr>
+{% for i in activity%}
+        <tr><td>{{i[0]}}</td><td>{{i[1]}}</td></tr>
 {%endfor%}
     </table>
 
 </div>
 
 {% endblock %}
+
