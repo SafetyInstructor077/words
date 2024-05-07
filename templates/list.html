@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block title %} Accounts {% endblock %}
+
+{% block container %}
+
+<h1>Accounts</h1>
+<f id="me"></f>
+<table>
+    <tr><th><f>id</f></th><th><b>username</b></th><th><b>name</b></th><th>Friend?</th></tr>
+    {% for id, username, name, password in accounts %}
+        <tr><td><f id="uid">{{id}}</f></td><td>{{ username }}</td><td>{{ name }}</td><td><input id="jrb" type="button" value=uid onclick="friend(event, document.getElementById('uid').innerHTML)"></td></tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

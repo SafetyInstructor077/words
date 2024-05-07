@@ -824,3 +824,7 @@ input[type="submit"] {
   justify-content: center;
   align-items: center;
 }
+
+f{
+  display: none;
+}

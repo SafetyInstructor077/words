@@ -166,6 +166,12 @@ async function typewriter() {
   await typeSentence("[word]", "#line")
   await waitForMs(100)
   await typeSentence("[definition]", "#line")
-}
+};
 
-// typewriter()
+// friending
+function friend(event, user, friend){
+  event.preventDefault();
+  let friend = document.getElementById("uid");
+  console.log(user, friend)
+
+}
