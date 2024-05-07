@@ -274,10 +274,6 @@ td {
   border-bottom: 1px #303030 solid;
 }
 
-/* tr{
-  background-color: #2e445e9b;
-  border-radius: 10px;
-} */
 
 .table {
   margin-top: 80px;
@@ -304,59 +300,7 @@ td {
   max-height: 50px;
 }
 
-#ihm_description{
-  margin-top: 20px;
-  max-height: 7rem;
-  width: 570px;
-  color: var(--black);
-  font-size: 10px;
-  word-wrap: break-word;
-  overflow: auto;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
-  font-family: "Times New Roman", Times, serif;
-}
-
-#ihm_description *{
-  all: initial;
-  color: var(--black);
-  font-size: 10px;
-  word-wrap: break-word;
-  overflow: auto;
-  text-overflow: ellipsis;
-}
-
-#ihm_desc{
-  margin-top: 20px;
-  /* max-height: 7rem; */
-  /* width: 570px; */
-
-  color: var(--black);
-  font-size: 20px;
-  word-wrap: break-word;
-  overflow: auto;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
-  font-family: "Times New Roman", Times, serif;
-}
-
-#ihm_desc *{
-  all: initial;
-  color: var(--black);
-  font-size: 10px;
-  word-wrap: break-word;
-  overflow: auto;
-  text-overflow: ellipsis;
-}
-
 /* Typewriter */
-
-/* .part1 > *{
-  all: initial;
-  display: block;
-  font-size: xx-small;
-  color: #757575;
-} */
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -522,21 +466,6 @@ input[type="submit"] {
   background-color: #9ec6de;
 }
 
-
-/* input[type="radio"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-} */
-
-/* input[type="radio"]:checked {
-  background-color: #007bff;
-  color: #fff;
-} */
 
 /* Wordle */
 
