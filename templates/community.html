@@ -4,13 +4,16 @@
 {% block container %}
 
 <div id="journal__container">
-    <table id="activity">
-{% for user, entry in activity%}
+    <table>
         <tr><th>user</th><th>activity</th></tr>
-        <tr><td>{{user}}</td><td>{{entry}}</td></tr>
+{% for i in activity%}
+        {% for j in i%}
+        <tr id="activity"><td>{{j[0]}}</td><td>{{j[1]}}</td></tr>
+        {%endfor%}
 {%endfor%}
     </table>
 
 </div>
 
 {% endblock %}
+

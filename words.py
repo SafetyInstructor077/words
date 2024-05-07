@@ -9,6 +9,8 @@ app.secret_key = 'BAD_SECRET_KEY'
 @app.route('/')
 def start():
     user = session.get('username')
+    if user is None:
+        return redirect('/login')
     uname= db._select(f"""select name from accounts where username='{user}'""")[0][0]
     wordn=db.get_word()
     print(wordn)
@@ -16,23 +18,33 @@ def start():
 
 @app.route('/com')
 def com():
+    activity=[]
     user = session.get('username')
     uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
-    friend=f"""select id from amities where id1={uid} or id2={uid} """
-    activity=db.get_entries_by(uid, friend)
+    print(uid)
+    friend = db._select(f"""select distinct accounts.id from accounts, amities where (accounts.id=id1 or accounts.id=id2) and (id1={uid} or id2={uid}) """)
+    print(friend)
+    for i in range(len(friend)):
+        print(friend[i][0])
+        activity.append(db.get_entries_by(friend[i][0]))
+        print('act',activity)
+    activity.pop(0)
     print(activity)
     return render_template("community.html", activity=activity)
 
-@app.route('/friend')
+@app.route('/friend', methods=['GET','POST'])
 def friend():
     accounts = db.get_all_accounts()
     print(accounts)
     user = session.get('username')
     uid= db._select(f"""select id from accounts where username='{user}'""")[0][0]
+    print(uid)
+    if request.method=='POST':
+        friende = request.json['friende']
+        print(friende)
+        db.friend(uid, friende)
 
-
-    
-    return render_template("list.html", accounts=accounts)
+    return render_template("list.html", accounts=accounts, uid=uid)
 
 @app.route('/journal', methods=['GET','POST'])
 def journal():
@@ -58,7 +70,7 @@ def journal():
 @app.route('/logout')
 def logout():
     session.pop('username', default=None)
-    return '<h1>Session deleted!</h1>'
+    return redirect('/')
 
 
 @app.route('/insert', methods=['GET', 'POST'])

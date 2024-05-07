@@ -3,6 +3,8 @@
 
 {% block container %}
 <div class="tp">
+    <div class="round-contain">
+    <h1>Login</h1> <br><br>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
     <form action="/login" method="post" class="iformlog" id="iformlog">
     
@@ -13,10 +15,10 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password"><br><br>
 
-    
-        <input type="button" value="Submit" onclick="validerformlog(event)">
+        <input type="button" id='jrb' value="Submit" onclick="validerformlog(event)">
     </form>
     No Account? <a href="/insert"><u>Create One.</u></a> <br>
    <a href="/logout"><u>Logout.</u></a>
+</div>
 </div>
 {% endblock %}
