@@ -18,6 +18,13 @@ def com():
     users=db.oeuvres_de_type(id_type)
     return render_template("community.html", users=user)
 
+@app.route('/friend')
+def friend():
+    accounts = db.get_all_accounts()
+    print(accounts)
+    
+    return render_template("list.html", accounts=accounts)
+
 @app.route('/journal', methods=['GET','POST'])
 def journal():
     user = session.get('username')
@@ -43,13 +50,6 @@ def journal():
 def logout():
     session.pop('username', default=None)
     return '<h1>Session deleted!</h1>'
-
-
-@app.route('/friend')
-def admins():
-    accounts = db.get_all_accounts()
-    print(accounts)
-    return render_template("list.html", accounts=accounts)
 
 
 @app.route('/insert', methods=['GET', 'POST'])
