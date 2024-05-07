@@ -888,3 +888,7 @@ input[type="submit"] {
   width: 60%;
   padding: 20px; 
 }
+
+f{
+  display: none;
+}
